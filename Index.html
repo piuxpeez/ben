@@ -1,0 +1,140 @@
+<html>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+.b{
+width:30px;
+ height:45px; 
+background-color:blue;
+ position:fixed;
+ color:red;
+}
+#main{width:354;
+background:transparent;
+border:5px solid black;
+border-right:3px solid black;
+height:45px;
+margin-left:-8px;
+margin-top:-8px;
+}
+
+.div1{width:3px;
+max-width:354;
+ height:45px; 
+background-color:red; 
+position:absolute;
+}
+#main2{width:60px;;
+background:transparent;
+border:5px solid black;
+height:615px;
+float:right;
+border-top:3px solid black;
+margin-right:-14px;
+top:423px;
+z-index:-21px;
+}
+.div2{width:60px;;
+background:red;
+height:0px;
+float:right;
+max-height:1080px;
+}
+
+pace{background:red;
+height:500px;
+border:4px so}
+
+</style>
+
+<div id="main">
+<div class="div1">
+</div>
+</div>
+<div id="sp">
+</div>
+<div id="main2">
+
+<div class="div2">
+</div>
+</div>
+
+<br><br>
+
+<button class="up">click</button>
+
+<br>
+
+<button class="down">down</button>
+
+
+
+
+<p>it is:</p>
+<p2>it is:</p>
+<script>
+
+$(document).ready(function(){ 
+$(".up").click(function(){
+
+
+let x = $(".div1");
+let x2 = $(".div2");
+
+
+
+x.animate({width:'+=50',
+height:'45px' }, 0.20);
+$("p").text(x.width()+":px");
+
+
+x2.animate({height:'+=0', },0.20);
+if (x.width()==353)
+{x2.animate({height:'+=0', },0.20);
+//alert("353")
+}
+
+else if (x.width()>353)
+{x2.animate({height:'+=50', },0.20)};
+$("p2").text(x2.height()+":px");
+});
+
+
+
+
+
+
+$(".down").click(function(){
+
+let x = $(".div1");
+let x2 = $(".div2");
+
+
+//alert(y.height());
+
+if(x2.height()>45)
+{x.animate({width:'+=0'})
+}
+else{
+
+x.animate({width:'-=50' }, 0.20);
+$("p").text(x.width()+":px");
+}
+
+x2.animate({height:'-=50'
+ }, 0.20);
+$("p2").text(x2.height()+':px');
+
+
+});
+
+});
+
+
+
+
+</script>
